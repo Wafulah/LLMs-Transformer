@@ -90,6 +90,34 @@ The complete Transformer model consists of the Encoder and the necessary compone
 
 Pass a sequence of token indices through the model. The model will return the output embeddings, which can be used for downstream tasks like machine translation, text classification, or other NLP tasks.
 
+
 ```python
 output = model(src_sequence)
+```
 
+3. **Training**;
+
+Train the model using standard PyTorch training loops, optimizing the model parameters with an appropriate loss function (e.g., cross-entropy loss) and optimizer (e.g., Adam).
+
+```python
+# Example of training loop
+for epoch in range(num_epochs):
+    optimizer.zero_grad()
+    output = model(src_sequence)
+    loss = loss_fn(output, target_sequence)
+    loss.backward()
+    optimizer.step()
+```
+
+
+## Conclusion
+
+This implementation of the Transformer model in PyTorch demonstrates the essential components such as multi-head attention, encoder layers, and the full transformer architecture. The model can be easily adapted for a wide range of NLP tasks and is designed to efficiently process sequential data with a focus on capturing complex relationships between words.
+
+## References
+
+1. **Attention Is All You Need** - The original paper introducing the Transformer architecture:  
+   [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
+2. **How to Reproduce GPT-2** - A detailed YouTube tutorial by Andrej Karpathy on building a GPT-2-like model:  
+   [How to Reproduce GPT-2](https://www.youtube.com/watch?v=8V5A3L0R9IE)
