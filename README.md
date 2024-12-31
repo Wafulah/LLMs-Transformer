@@ -85,3 +85,11 @@ The complete Transformer model consists of the Encoder and the necessary compone
    
    ```python
    model = Transformer(src_vocab_size=10000, trg_vocab_size=10000, src_pad_idx=0, trg_pad_idx=0)
+
+2. **Forward Pass**;
+
+Pass a sequence of token indices through the model. The model will return the output embeddings, which can be used for downstream tasks like machine translation, text classification, or other NLP tasks.
+
+```python
+output = model(src_sequence)
+
